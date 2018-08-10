@@ -111,10 +111,10 @@ I386_LD_FLAGS='-arch i386'
 
 X86_64_CF_FLAGS="-arch x86_64 -Wno-error=implicit-function-declaration #{CF_FLAGS}"
 X86_64_LD_FLAGS='-arch x86_64'
-
+# '--disable-shared',
 SMB_ARGS = [
 '--prefix=/private',
-'--disable-shared',
+'--enable-shared',
 '--enable-static',
 '--without-readline',
 '--with-libsmbclient',
