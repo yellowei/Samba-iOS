@@ -5,12 +5,22 @@ For now KxSMB supports a limited set of SMB operations.
 It mostly was designed for browsing local net and retrieving files.
 
 ### Build instructions:
-
+Xcode 8
 First you need download, configure and build [samba](http://www.samba.org).
 For this open console and type in
 	
-	cd kxsmb	
-	rake
+	cd Samba-iOS
+	
+	export samba_cv_big_endian=no  
+	export samba_cv_little_endian=yes  
+	export samba_cv_CC_NEGATIVE_ENUM_VALUES=yes  
+	export libreplace_cv_HAVE_GETADDRINFO=no  
+	export samba_cv_HAVE_WRFILE_KEYTAB=no  
+	export smb_krb5_cv_enctype_to_string_takes_krb5_context_arg=no  
+	export smb_krb5_cv_enctype_to_string_takes_size_t_arg=yes  
+	export ac_cv_file__proc_sys_kernel_core_pattern=yes  
+  
+	rake   
 
 ### Usage
 
