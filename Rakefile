@@ -91,7 +91,7 @@ SAMBA_SOURCE_PATH="#{SAMBA_FOLDER}/source3"
 EXT_INCLUDE_PATH='tmp/include'
 
 # configure arguments
-
+# -read_only_relocs suppress
 CF_FLAGS='-pipe -Wno-trigraphs -fpascal-strings -Os -fembed-bitcode -g'
 
 IOS_CF_FLAGS='-ftree-vectorize'
@@ -114,7 +114,7 @@ X86_64_LD_FLAGS='-arch x86_64'
 # '--disable-shared',
 SMB_ARGS = [
 '--prefix=/private',
-'--enable-shared',
+'--disable-shared',
 '--enable-static',
 '--without-readline',
 '--with-libsmbclient',
@@ -347,4 +347,4 @@ end
 
 task :build_full => [:retrieve_samba, :build_smb_armv7, :build_smb_armv7s, :build_smb_arm64, :build_smb_i386, :build_smb_x86_64, :build_smb_universal_full, :copy_libs, :copy_headers] 
 task :build_all => [:retrieve_samba, :build_smb_armv7, :build_smb_arm64, :build_smb_i386, :build_smb_x86_64, :build_smb_universal, :copy_libs, :copy_headers] 
-task :default => [:build_all]
+task :default => [:build_full]
