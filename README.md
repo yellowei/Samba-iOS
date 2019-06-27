@@ -20,6 +20,7 @@ For this open console and type in
 	export smb_krb5_cv_enctype_to_string_takes_size_t_arg=yes  
 	export ac_cv_file__proc_sys_kernel_core_pattern=yes  
   
+  	brew install autoconf
 	rake   
 
 ### Usage
