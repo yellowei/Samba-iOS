@@ -1,0 +1,11 @@
+prefix=/usr/local/Cellar/samba-ios
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: smbclient
+Description: Samba library
+Version: 4.0.26
+Libs: -L${exec_prefix}/lib -lsmbclient -ltalloc -ltdb -ltevent -lwbclient -liconv -lz -lresolv -framework Foundation
+Libs.private: -lpthread -lm -ldl
+Cflags: -I${prefix}/include
